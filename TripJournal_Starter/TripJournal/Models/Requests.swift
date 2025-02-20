@@ -1,27 +1,33 @@
 import Foundation
 
+/// Represents  the parameters to login the user
+struct LoginRequest: Encodable {
+    let username: String
+    let password: String
+}
+
 /// An object that can be used to create a new trip.
-struct TripCreate {
+struct TripCreate: Encodable {
     let name: String
     let startDate: Date
     let endDate: Date
 }
 
 /// An object that can be used to update an existing trip.
-struct TripUpdate {
+struct TripUpdate: Encodable {
     let name: String
     let startDate: Date
     let endDate: Date
 }
 
 /// An object that can be used to create a media.
-struct MediaCreate {
+struct MediaCreate: Encodable {
     let eventId: Event.ID
     let base64Data: Data
 }
 
 /// An object that can be used to create a new event.
-struct EventCreate {
+struct EventCreate: Encodable {
     let tripId: Trip.ID
     let name: String
     let note: String?
@@ -31,7 +37,8 @@ struct EventCreate {
 }
 
 /// An object that can be used to update an existing event.
-struct EventUpdate {
+struct EventUpdate: Encodable {
+    let tripId: Trip.ID
     var name: String
     var note: String?
     var date: Date

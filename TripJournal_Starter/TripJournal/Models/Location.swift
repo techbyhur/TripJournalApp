@@ -19,6 +19,12 @@ final class Location: Sendable, Hashable, Codable {
         return .init(latitude: latitude, longitude: longitude)
     }
     
+    enum CodingKeys: String, CodingKey {
+        case locLat = "latitude"
+        case locLong = "longitude"
+        case locAddress = "address"
+    }
+    
     init(latitude: Double, longitude: Double, address: String? = nil) {
         self.latitude = latitude
         self.longitude = longitude
@@ -26,13 +32,16 @@ final class Location: Sendable, Hashable, Codable {
     }
     
     init(from decoder: any Decoder) throws {
-#warning("Update with accurate decoding logic")
-        self.latitude = 0.0
-        self.longitude = 0.0
-        self.address = nil
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.latitude = try values.decode(Double.self, forKey: .locLat)
+        self.longitude = try values.decode(Double.self, forKey: .locLong)
+        self.address = try values.decodeIfPresent(String.self, forKey: .locAddress)
     }
     
     func encode(to encoder: any Encoder) throws {
-#warning("Encode to JSON Object")
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(latitude, forKey: .locLat)
+        try container.encode(longitude, forKey: .locLong)
+        try container.encode(address, forKey: .locAddress)
     }
 }

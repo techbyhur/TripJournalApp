@@ -250,6 +250,7 @@ struct EventForm: View {
         do {
             try validateForm()
             let request = EventUpdate(
+                tripId: tripId,
                 name: name,
                 note: note?.nonEmpty,
                 date: date,

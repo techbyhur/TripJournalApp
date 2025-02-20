@@ -13,7 +13,7 @@ import MapKit
 final class Trip: Identifiable, Sendable, Hashable, Codable, Comparable {
     
     @Attribute(.unique)
-    var id: UUID
+    var id: Int
     
     var name: String
     var startDate: Date
@@ -22,8 +22,16 @@ final class Trip: Identifiable, Sendable, Hashable, Codable, Comparable {
     @Relationship(deleteRule: .cascade)
     var events: [Event]
     
-    init(id: UUID, name: String, startDate: Date, endDate: Date, events: [Event]) {
-        self.id = id
+    enum CodingKeys: String, CodingKey {
+        case tripId = "id"
+        case tripName = "name"
+        case tripIdStartDate = "start_date"
+        case tripIdEndDate = "end_date"
+        case tripIdEvents = "events"
+    }
+    
+    init(name: String, startDate: Date, endDate: Date, events: [Event]) {
+        self.id = Int.random(in: 0...10000)
         self.name = name
         self.startDate = startDate
         self.endDate = endDate
@@ -31,16 +39,21 @@ final class Trip: Identifiable, Sendable, Hashable, Codable, Comparable {
     }
     
     init(from decoder: any Decoder) throws {
-#warning("Update with accurate decoding logic")
-        id = UUID()
-        name = ""
-        startDate = Date()
-        endDate = Date()
-        events = []
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try values.decode(Int.self, forKey: .tripId)
+        self.name = try values.decode(String.self, forKey: .tripName)
+        self.startDate = try values.decode(Date.self, forKey: .tripIdStartDate)
+        self.endDate = try values.decode(Date.self, forKey: .tripIdEndDate)
+        self.events = try values.decode([Event].self, forKey: .tripIdEvents)
     }
     
     func encode(to encoder: any Encoder) throws {
-#warning("Encode to JSON Object")
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .tripId)
+        try container.encode(name, forKey: .tripName)
+        try container.encode(startDate, forKey: .tripIdStartDate)
+        try container.encode(endDate, forKey: .tripIdEndDate)
+        try container.encode(events, forKey: .tripIdEvents)
     }
     
     static func < (lhs: Trip, rhs: Trip) -> Bool {

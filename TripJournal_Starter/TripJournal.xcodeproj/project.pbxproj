@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,7 +24,6 @@
 		0767E7102B573F6300993870 /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0767E70F2B573F6300993870 /* LocationSearchView.swift */; };
 		07AA89D72B5F251800405269 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AA89D62B5F251800405269 /* Requests.swift */; };
 		07BCBA7A2B5B256500C6F687 /* MediaGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCBA792B5B256500C6F687 /* MediaGallery.swift */; };
-		07BCBA872B5D656E00C6F687 /* JournalService+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCBA862B5D656E00C6F687 /* JournalService+Mock.swift */; };
 		07BCBA892B5D65AD00C6F687 /* JournalService+Unimplemented.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCBA882B5D65AD00C6F687 /* JournalService+Unimplemented.swift */; };
 		07BCBA8B2B5D65D200C6F687 /* JournalService+Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCBA8A2B5D65D200C6F687 /* JournalService+Environment.swift */; };
 		07BCBA8F2B5D7EC500C6F687 /* MediaCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCBA8E2B5D7EC500C6F687 /* MediaCarousel.swift */; };
@@ -35,6 +34,10 @@
 		897170E82D66876800C5CB4E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897170E72D66876600C5CB4E /* Location.swift */; };
 		897170EA2D66880300C5CB4E /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897170E92D66880000C5CB4E /* Media.swift */; };
 		897170EC2D6689D800C5CB4E /* JournalService+Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897170EB2D6689D200C5CB4E /* JournalService+Live.swift */; };
+		897171332D66C08200C5CB4E /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897171322D66C07E00C5CB4E /* KeychainHelper.swift */; };
+		897171352D66C53F00C5CB4E /* ServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897171342D66C53800C5CB4E /* ServiceHelper.swift */; };
+		897171472D67D18500C5CB4E /* OfflineCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897171462D67D17D00C5CB4E /* OfflineCacheManager.swift */; };
+		897171492D67D2A000C5CB4E /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897171482D67D29600C5CB4E /* NetworkMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +59,6 @@
 		0767E70F2B573F6300993870 /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		07AA89D62B5F251800405269 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		07BCBA792B5B256500C6F687 /* MediaGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaGallery.swift; sourceTree = "<group>"; };
-		07BCBA862B5D656E00C6F687 /* JournalService+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalService+Mock.swift"; sourceTree = "<group>"; };
 		07BCBA882B5D65AD00C6F687 /* JournalService+Unimplemented.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalService+Unimplemented.swift"; sourceTree = "<group>"; };
 		07BCBA8A2B5D65D200C6F687 /* JournalService+Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalService+Environment.swift"; sourceTree = "<group>"; };
 		07BCBA8E2B5D7EC500C6F687 /* MediaCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCarousel.swift; sourceTree = "<group>"; };
@@ -67,7 +69,15 @@
 		897170E72D66876600C5CB4E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		897170E92D66880000C5CB4E /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		897170EB2D6689D200C5CB4E /* JournalService+Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JournalService+Live.swift"; sourceTree = "<group>"; };
+		897171322D66C07E00C5CB4E /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		897171342D66C53800C5CB4E /* ServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHelper.swift; sourceTree = "<group>"; };
+		897171462D67D17D00C5CB4E /* OfflineCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCacheManager.swift; sourceTree = "<group>"; };
+		897171482D67D29600C5CB4E /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		897171362D67A21A00C5CB4E /* Networking */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Networking; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		075A90DC2B446996009A1DCB /* Frameworks */ = {
@@ -99,6 +109,7 @@
 		075A90E12B446996009A1DCB /* TripJournal */ = {
 			isa = PBXGroup;
 			children = (
+				897171362D67A21A00C5CB4E /* Networking */,
 				075A90E22B446996009A1DCB /* App.swift */,
 				075A90F02B4469C0009A1DCB /* RootView.swift */,
 				075A90E62B446997009A1DCB /* Assets.xcassets */,
@@ -127,6 +138,10 @@
 		07AA89D32B5F242100405269 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				897171482D67D29600C5CB4E /* NetworkMonitor.swift */,
+				897171462D67D17D00C5CB4E /* OfflineCacheManager.swift */,
+				897171342D66C53800C5CB4E /* ServiceHelper.swift */,
+				897171322D66C07E00C5CB4E /* KeychainHelper.swift */,
 				07F6695C2B589A1E002F8D18 /* AddButton.swift */,
 				075A90FC2B446AA9009A1DCB /* Utils.swift */,
 			);
@@ -171,7 +186,6 @@
 				897170EB2D6689D200C5CB4E /* JournalService+Live.swift */,
 				0703FC732B4583B80084DD8A /* JournalService.swift */,
 				07BCBA8A2B5D65D200C6F687 /* JournalService+Environment.swift */,
-				07BCBA862B5D656E00C6F687 /* JournalService+Mock.swift */,
 				07BCBA882B5D65AD00C6F687 /* JournalService+Unimplemented.swift */,
 			);
 			path = JournalService;
@@ -201,6 +215,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				897171362D67A21A00C5CB4E /* Networking */,
 			);
 			name = TripJournal;
 			productName = TripJournal;
@@ -266,15 +283,18 @@
 				075A90E32B446996009A1DCB /* App.swift in Sources */,
 				075A90FD2B446AA9009A1DCB /* Utils.swift in Sources */,
 				075A90FF2B446AD6009A1DCB /* EventForm.swift in Sources */,
+				897171472D67D18500C5CB4E /* OfflineCacheManager.swift in Sources */,
 				0703FC782B49351F0084DD8A /* LocationPicker.swift in Sources */,
+				897171332D66C08200C5CB4E /* KeychainHelper.swift in Sources */,
 				07BCBA892B5D65AD00C6F687 /* JournalService+Unimplemented.swift in Sources */,
 				075A90F12B4469C0009A1DCB /* RootView.swift in Sources */,
 				897170E42D66861800C5CB4E /* Trip.swift in Sources */,
+				897171352D66C53F00C5CB4E /* ServiceHelper.swift in Sources */,
 				075A90F72B446A5C009A1DCB /* TripForm.swift in Sources */,
-				07BCBA872B5D656E00C6F687 /* JournalService+Mock.swift in Sources */,
 				0767E7102B573F6300993870 /* LocationSearchView.swift in Sources */,
 				075A90FB2B446A80009A1DCB /* EventCell.swift in Sources */,
 				07BCBA8F2B5D7EC500C6F687 /* MediaCarousel.swift in Sources */,
+				897171492D67D2A000C5CB4E /* NetworkMonitor.swift in Sources */,
 				07F6695D2B589A1E002F8D18 /* AddButton.swift in Sources */,
 				075A90F52B446A41009A1DCB /* TripDetails.swift in Sources */,
 				897170E22D6684F200C5CB4E /* Token.swift in Sources */,

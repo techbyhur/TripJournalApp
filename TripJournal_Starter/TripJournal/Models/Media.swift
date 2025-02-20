@@ -12,21 +12,29 @@ import SwiftData
 final class Media: Identifiable, Sendable, Hashable, Codable {
     
     @Attribute(.unique)
-    var id: UUID
+    var id: Int
+    
     var url: URL?
     
-    init(id: UUID, url: URL? = nil) {
-        self.id = id
+    enum CodingKeys: String, CodingKey {
+        case mediaId = "id"
+        case mediaUrl = "url"
+    }
+    
+    init(url: URL? = nil) {
+        self.id = Int.random(in: 0...10000)
         self.url = url
     }
     
     init(from decoder: any Decoder) throws {
-#warning("Update with accurate decoding logic")
-        self.id = UUID()
-        self.url = nil
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try values.decode(Int.self, forKey: .mediaId)
+        self.url = try values.decodeIfPresent(URL.self, forKey: .mediaUrl)
     }
     
     func encode(to encoder: any Encoder) throws {
-        #warning("Encode to JSON Object")
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .mediaId)
+        try container.encodeIfPresent(url, forKey: .mediaUrl)
     }
 }
