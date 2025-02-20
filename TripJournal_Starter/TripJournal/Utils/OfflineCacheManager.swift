@@ -16,7 +16,7 @@ class OfflineCacheManager {
             let data = try JSONEncoder().encode(trips)
             userDefaults.set(data, forKey: tripsKey)
         } catch {
-            print("Failed to save trips to UserDefaults: \(error)")
+            print("Failed to save trips: \(error)")
         }
     }
 
@@ -27,6 +27,7 @@ class OfflineCacheManager {
         do {
             return try JSONDecoder().decode([Trip].self, from: data)
         } catch {
+            print("Failed to load trips: \(error)")
             return []
         }
     }

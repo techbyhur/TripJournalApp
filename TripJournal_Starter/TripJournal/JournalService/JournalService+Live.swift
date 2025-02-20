@@ -71,7 +71,7 @@ class LiveJournalService: JournalService {
     //MARK: Authentication Requests
     func register(username: String, password: String) async throws -> Token {
         let request = try createRegisterRequest(username: username, password: password)
-        var token = try await performNetworkRequest(request, responseType: Token.self)
+        let token = try await performNetworkRequest(request, responseType: Token.self)
         token.expirationDate = Token.defaultExpirationDate()
         self.token = token
         return token
@@ -79,7 +79,7 @@ class LiveJournalService: JournalService {
     
     func logIn(username: String, password: String) async throws -> Token {
         let request = try createLoginRequest(username: username, password: password)
-        var token = try await performNetworkRequest(request, responseType: Token.self)
+        let token = try await performNetworkRequest(request, responseType: Token.self)
         token.expirationDate = Token.defaultExpirationDate()
         self.token = token
         return token
@@ -97,7 +97,7 @@ class LiveJournalService: JournalService {
     
     func getTrips() async throws -> [Trip] {
         if !networkMonitor.isConnected {
-            print("Offline: Loading trips from cache...")
+            print("Offline: Attempting to load trips from cache...")
             return offlineCacheManager.loadTrips()
         }
         
